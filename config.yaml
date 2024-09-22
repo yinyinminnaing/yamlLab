@@ -1,0 +1,17 @@
+database: &commondb
+  host: db.example.net
+  port: 3306
+  enabled: true
+  legacy: yes
+
+dababase-new: *commondb
+
+prod_db: 
+  <<: *commondb
+  host: prod-db.example.net
+  password: myprodpassword
+
+dev_db:
+  <<: *commondb
+  host: localhost
+  password: testpassword
